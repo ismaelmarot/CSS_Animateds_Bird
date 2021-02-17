@@ -1,0 +1,101 @@
+/*===== STYLES =====*/
+.photo
+	@include setHeightWidth(80vh,100%)
+	border-radius: 5px
+	margin-top: 1em
+	position: relative
+	background-color: nth($color-list,9)
+	//overflow: hidden
+
+.bird
+	@include setHeightWidth(8em,8em)
+	position: absolute
+	margin-left: -20em
+	@include animationBirdMovement(0,5s)
+
+.bird-head
+	@include setHeightWidth(3em,3em)	
+	position: absolute
+	margin-left: 3em
+	z-index:3
+
+.bird-face
+	@include setHeightWidth(3em,2em)
+	@include setBorderRadio(100px,0,0,100px)
+	background: nth($color-list,2)
+	position: relative
+	z-index: 3
+
+.bird-eye
+	@include setHeightWidth(1em,1em)
+	@include setBorderRadio(100%,100%,100%,100%)
+	background-color: nth($color-list,1)
+	position: absolute
+	margin-top: .8em
+	margin-left: .8em
+	@include animationBirdEye(0,5s)	
+
+.bird-beak-up
+	@include setHeightWidth(2em,2em)
+	@include setBorderRadio(0,100%,0,0)
+	background: nth($color-list,4)
+	margin-top: -3em
+	margin-left: 2em
+
+.bird-beak-down
+	@include setHeightWidth(1em,1em)
+	@include setBorderRadio(0,0,100%,0)
+	background-color: nth($color-list,3)
+	margin-left: 2em
+
+.bird-neck
+	@include setHeightWidth(3em,2em)
+	@include setBorderRadio(100px,0,0,100px)
+	background: nth($color-list,5)
+	position: relative
+	margin-top: -3em
+	margin-left: -.5em
+	z-index: 2
+
+.bird-body
+	@include setHeightWidth(3em,6em)
+	@include setBorderRadio(0,0,3em,3em)
+	@include rotateFigure(-60deg)
+	background-color: nth($color-list,5)
+	position: absolute
+	margin-top: 2.5em
+
+.bird-tail
+	@include setHeightWidth(1em,2em)
+	@include setBorderRadio(0,0,1em,1em)
+	@include rotateFigure(-60deg)
+	background-color: nth($color-list,5)
+	position: absolute
+	margin-top: 6em
+	margin-left: -.6em
+
+.wing-1,.wing-2,.wing-3 
+	@include setHeightWidth(2em,4em)
+	@include setBorderRadio(0,0em,2em,2em)
+	background-color: nth($color-list,5)	
+	margin-left: -.5em
+	position: absolute
+
+.wing-1
+	@include rotateFigure(-20deg)
+	border: 1px solid nth($color-list,5)
+	border-bottom-color: nth($color-list,6)
+	border-right-color: nth($color-list,6)
+	margin-top: 3.5em
+	z-index: 3
+	@include animationWings-1(0,5s)
+
+.wing-2
+	@include rotateFigure(5deg)
+	margin-top: 2.5em
+	@include animationWings-2(0,5s)
+
+.wing-3
+	@include rotateFigure(40deg)
+	margin-top: 1.5em
+	@include animationWings-3(0,5s)

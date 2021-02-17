@@ -1,0 +1,102 @@
+/*===== MIXINS =====*/
+@mixin flex-row
+	display: flex
+	justify-content: center
+	align-items: center
+
+@mixin flex-column
+	@extend flex-row
+	flex-direction: column
+
+@mixin setHeightWidth($height,$width)
+	height: $height
+	width: $width
+
+@mixin rotateFigure($degrees)
+	-webkit-transform: rotate($degrees)
+	-moz-transform: rotate($degrees)
+	-ms-transform: rotate($degrees)
+	-o-transform: rotate($degrees)
+	transform: rotate($degrees)
+
+@mixin setBorderRadio($topLeft,$topRight,$bottomRight,$bottomLeft)
+	-moz-border-radius: $topLeft $topRight $bottomRight $bottomLeft
+	-webkit-border-radius: $topLeft $topRight $bottomRight $bottomLeft
+	border-radius: $topLeft $topRight $bottomRight $bottomLeft
+	
+/*===== ANIMATIONS =====*/
+@mixin animationBirdMovement($animationDelay,$animationDuration)
+	animation: displacementBird infinite 
+	animation-duration: $animationDuration
+	animation-delay: $animationDelay	
+
+@mixin animationBirdEye($animationDelay,$animationDuration)
+	animation: blinkBird infinite
+	animation-duration: $animationDuration
+	animation-delay: $animationDelay
+
+@mixin animationWings-1($animationDelay,$animationDuration)
+	animation: wingsBird-1 infinite
+	animation-duration: $animationDuration
+	animation-delay: $animationDelay
+
+@mixin animationWings-2($animationDelay,$animationDuration)
+	animation: wingsBird-2 infinite
+	animation-duration: $animationDuration
+	animation-delay: $animationDelay
+
+@mixin animationWings-3($animationDelay,$animationDuration)
+	animation: wingsBird-3 infinite
+	animation-duration: $animationDuration
+	animation-delay: $animationDelay
+
+/*===== KEYFRAMES =====*/
+@keyframes displacementBird
+	0% 
+		margin-top: 0em	
+	50%	
+		margin-top: 30%
+		margin-left: 45%	
+	70%
+		margin-top: 30%
+		margin-left: 45%
+	100%
+		margin-top: -100%
+		margin-left: 70%	
+
+@keyframes blinkBird
+	50%
+		@include setHeightWidth(1em,1em)
+		@include setBorderRadio(100%,100%,100%,100%)
+		margin-top: .8em
+		margin-left: .8em
+	52%
+		@include setHeightWidth(1px,8px)
+		@include setBorderRadio(0,0,0,0)
+		margin-top: 1.2em
+		margin-left: 1em
+	53%
+		@include setHeightWidth(1em,1em)
+		@include setBorderRadio(100%,100%,100%,100%)
+		margin-top: .8em
+		margin-left: .8em	
+
+@keyframes wingsBird-1
+	20%
+		@include rotateFigure(0deg)
+	30%
+		@include rotateFigure(-20deg)		
+	40%
+		@include rotateFigure(0deg)	
+	50%
+		@include rotateFigure(-20deg)
+
+@keyframes wingsBird-2
+	20%
+		@include rotateFigure(0deg)
+	30%
+		@include rotateFigure(-10deg)		
+	40%
+		@include rotateFigure(0deg)	
+	50%
+		@include rotateFigure(-10deg)				

@@ -1,0 +1,296 @@
+/*===== MAIN =====*/
+/*===== GRID LAYOUT =====*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.photo {
+  grid-column: 2/8;
+}
+
+/*===== VARIABLES =====*/
+/*===== COLORS =====*/
+/*===== LISTS =====*/
+/*===== MIXINS =====*/
+/*===== ANIMATIONS =====*/
+/*===== KEYFRAMES =====*/
+@keyframes displacementBird {
+  0% {
+    margin-top: 0em;
+  }
+  50% {
+    margin-top: 30%;
+    margin-left: 45%;
+  }
+  70% {
+    margin-top: 30%;
+    margin-left: 45%;
+  }
+  100% {
+    margin-top: -100%;
+    margin-left: 70%;
+  }
+}
+@keyframes blinkBird {
+  50% {
+    height: 1em;
+    width: 1em;
+    -moz-border-radius: 100% 100% 100% 100%;
+    -webkit-border-radius: 100% 100% 100% 100%;
+    border-radius: 100% 100% 100% 100%;
+    margin-top: 0.8em;
+    margin-left: 0.8em;
+  }
+  52% {
+    height: 1px;
+    width: 8px;
+    -moz-border-radius: 0 0 0 0;
+    -webkit-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+    margin-top: 1.2em;
+    margin-left: 1em;
+  }
+  53% {
+    height: 1em;
+    width: 1em;
+    -moz-border-radius: 100% 100% 100% 100%;
+    -webkit-border-radius: 100% 100% 100% 100%;
+    border-radius: 100% 100% 100% 100%;
+    margin-top: 0.8em;
+    margin-left: 0.8em;
+  }
+}
+@keyframes wingsBird-1 {
+  20% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  40% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+}
+@keyframes wingsBird-2 {
+  20% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  40% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+}
+/*===== STYLES =====*/
+.photo {
+  height: 80vh;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 1em;
+  position: relative;
+  background-color: #48dbfb;
+}
+
+.bird {
+  height: 8em;
+  width: 8em;
+  position: absolute;
+  margin-left: -20em;
+  animation: displacementBird infinite;
+  animation-duration: 5s;
+  animation-delay: 0;
+}
+
+.bird-head {
+  height: 3em;
+  width: 3em;
+  position: absolute;
+  margin-left: 3em;
+  z-index: 3;
+}
+
+.bird-face {
+  height: 3em;
+  width: 2em;
+  -moz-border-radius: 100px 0 0 100px;
+  -webkit-border-radius: 100px 0 0 100px;
+  border-radius: 100px 0 0 100px;
+  background: white;
+  position: relative;
+  z-index: 3;
+}
+
+.bird-eye {
+  height: 1em;
+  width: 1em;
+  -moz-border-radius: 100% 100% 100% 100%;
+  -webkit-border-radius: 100% 100% 100% 100%;
+  border-radius: 100% 100% 100% 100%;
+  background-color: #1e272e;
+  position: absolute;
+  margin-top: 0.8em;
+  margin-left: 0.8em;
+  animation: blinkBird infinite;
+  animation-duration: 5s;
+  animation-delay: 0;
+}
+
+.bird-beak-up {
+  height: 2em;
+  width: 2em;
+  -moz-border-radius: 0 100% 0 0;
+  -webkit-border-radius: 0 100% 0 0;
+  border-radius: 0 100% 0 0;
+  background: #f7d231;
+  margin-top: -3em;
+  margin-left: 2em;
+}
+
+.bird-beak-down {
+  height: 1em;
+  width: 1em;
+  -moz-border-radius: 0 0 100% 0;
+  -webkit-border-radius: 0 0 100% 0;
+  border-radius: 0 0 100% 0;
+  background-color: #f7b731;
+  margin-left: 2em;
+}
+
+.bird-neck {
+  height: 3em;
+  width: 2em;
+  -moz-border-radius: 100px 0 0 100px;
+  -webkit-border-radius: 100px 0 0 100px;
+  border-radius: 100px 0 0 100px;
+  background: #009432;
+  position: relative;
+  margin-top: -3em;
+  margin-left: -0.5em;
+  z-index: 2;
+}
+
+.bird-body {
+  height: 3em;
+  width: 6em;
+  -moz-border-radius: 0 0 3em 3em;
+  -webkit-border-radius: 0 0 3em 3em;
+  border-radius: 0 0 3em 3em;
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+  background-color: #009432;
+  position: absolute;
+  margin-top: 2.5em;
+}
+
+.bird-tail {
+  height: 1em;
+  width: 2em;
+  -moz-border-radius: 0 0 1em 1em;
+  -webkit-border-radius: 0 0 1em 1em;
+  border-radius: 0 0 1em 1em;
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+  background-color: #009432;
+  position: absolute;
+  margin-top: 6em;
+  margin-left: -0.6em;
+}
+
+.wing-1, .wing-2, .wing-3 {
+  height: 2em;
+  width: 4em;
+  -moz-border-radius: 0 0em 2em 2em;
+  -webkit-border-radius: 0 0em 2em 2em;
+  border-radius: 0 0em 2em 2em;
+  background-color: #009432;
+  margin-left: -0.5em;
+  position: absolute;
+}
+
+.wing-1 {
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  border: 1px solid #009432;
+  border-bottom-color: #2ecc71;
+  border-right-color: #2ecc71;
+  margin-top: 3.5em;
+  z-index: 3;
+  animation: wingsBird-1 infinite;
+  animation-duration: 5s;
+  animation-delay: 0;
+}
+
+.wing-2 {
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  transform: rotate(5deg);
+  margin-top: 2.5em;
+  animation: wingsBird-2 infinite;
+  animation-duration: 5s;
+  animation-delay: 0;
+}
+
+.wing-3 {
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  transform: rotate(40deg);
+  margin-top: 1.5em;
+  animation: wingsBird-3 infinite;
+  animation-duration: 5s;
+  animation-delay: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
